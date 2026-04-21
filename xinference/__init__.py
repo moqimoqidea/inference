@@ -24,15 +24,15 @@ if os.environ.get("PYTORCH_MPS_HIGH_WATERMARK_RATIO") is None:
 if os.environ.get("PYTORCH_MPS_LOW_WATERMARK_RATIO") is None:
     os.environ["PYTORCH_MPS_LOW_WATERMARK_RATIO"] = "0.2"
 
-# from . import _version
+from . import _version
 
-# __version__ = _version.get_versions()["version"]
+__version__ = _version.get_versions()["version"]
 
 
-# try:
-    # import intel_extension_for_pytorch  # noqa: F401
-# except Exception:
-    # pass
+try:
+    import intel_extension_for_pytorch  # noqa: F401
+except Exception:
+    pass
 
 
 def _install():
